@@ -1,24 +1,77 @@
 !DOCTYPE html>
 <head>
-  <title>Your page title here</title>
+  <title>DevBootcamp Technical Blog 1</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="your-stylesheet-link-here.css">
 </head>
 
 <main>
-  <h1>Post Title</h1>
-  <h2>The subtitle, if you want it</h2>
-  <h4>Today's Date</h4>
+  <h1>Technical Blog 1</h1>
+  <h4>July 11th, 2015</h4>
 
   <section>
     <p>
-      Your first paragraph goes here. I'm using Web 2.0 Ipsum to add content. Webtwo ipsum dolor sit amet, eskobo chumby doostang bebo. Nuvvo koofers oooooc voxy klout jaiku palantir flickr insala zinch napster oooj, airbnb mzinga vimeo yuntaa balihoo plickers whrrl edmodo appjet kippt. Yoono imvu hulu eduvant blekko imvu ebay voki napster skype, hipmunk zinch wesabe bubbli ning meebo bitly zlio. Fleck elgg ideeli disqus rovio zillow sifteo blyve jabber, bitly geni zoho foodzie qeyno twones klout jiglu, hipmunk jaiku balihoo plickers heekya eskobo yuntaa. Sococo whrrl plickers movity whrrl zinch voki nuvvo meebo, quora heroku unigo kno wufoo jibjab woopra, groupon yuntaa spock mzinga jumo meebo movity. MOOOOOVITAAAAAAAAAY
+    Okay! So here's the first technical blog I'm writing as part of the DBC phase 0 requirements. This past week has mostly been about Git and GitHub. I'll be describing version control, how git tracks changes, and the benefits of using GitHub to store code. 
     </p>
+
+    <h2>What's Version Control?</h2>
+
     <p>
-        Lijit groupon ning stypi eskobo blyve ning shopify oooooc, meebo groupon prezi ebay voxy bitly diigo. Spock ifttt skype hipmunk movity whrrl bebo oooj empressr, disqus insala palantir bitly dropio zimbra zinch oooooc etsy, klout spock insala quora omgpop trulia jibjab. Sifteo dogster ebay grockit geni scribd bitly ning unigo, plickers voki mzinga tumblr kaboodle mozy whrrl woopra udemy, foodzie joukuu elgg twitter shopify akismet rovio. Kosmix eduvant woopra dopplr balihoo ning bebo akismet, boxbe vimeo kosmix shopify zappos bitly geni loopt, qeyno disqus sococo squidoo wikia octopart.
+    Version control is exactly what it sounds like. Version controls lets you keep track of multiple versions of a file. I think this is best illustrated with an example of a poor version control method.
+
     </p>
+
+
     <p>
-        Kazaa meevee eduvant gsnap movity kosmix kazaa klout jumo, trulia unigo groupon wakoopa spock knewton glogster heroku oooj, ning imvu appjet eskobo zillow twitter rovio. Glogster chegg voxy greplin dopplr voki foodzie xobni weebly odeo, sococo zynga knewton loopt palantir lala blyve tumblr blekko, twones akismet plaxo kippt meebo zillow zooomr insala. Oovoo imeem napster divvyshot zinch imeem voxy shopify, fleck kazaa zinch lanyrd boxbe joost wakoopa nuvvo, orkut elgg heekya sifteo scribd napster. Yammer yoono groupon dopplr cloudera nuvvo eduvant klout, voxy groupon disqus eduvant oooj greplin.
+
+    Let's say I have a Microsoft Word document of a story I'm writing and I reach a point where I can take the narrative in two completely opposite directions, let's say A and B. I could start writing version A and click Save As "StoryVer_A" As I'm writing Version A, there are more points where I could think about branching the story in another direction, or maybe there's natural stop points. Now I'd have to do another Save As with something like "StoryVer_A_1.2" As I write more and more, I'm quickly creating more and more files. This can become a big mess and it might be real difficult to find the version I want to be working on.
+    </p>
+
+    <p>
+
+    Version control with Git solves this by having repositories which hold multiple versions of the same file within the file. The equivalent to "Save As" in git is the commit command. You can attach a comment with the commit which will describe what changes were saved in this version of the file. This way, you can find what version you want to be working on and you won't have to navigate a huge list of files.
+
+    </p>
+
+    <h2>How Git tracks changes</h2>
+
+    <p>
+    Before we dive into how Git tracks changes, let's make a distinction between Git and GitHub. Git is a program that lives on your local machine. You can use git and do version control without being connected to the internet. We'll get more into the differences when I talk a bit more about GitHub, but that's all I think we need to talk abut right now.
+    </p>
+
+    <p>
+    In order for git to track changes, we have to be sure that we're inside a git repository first. Version control only works inside git repos. A file in a repo can be in one of 3 stages: working, staged, committed.
+    </p>
+
+    <p>
+      A working file is the lowest stage. If you're working in a git repo and you made a change to a file, that file is in the working stage. When you click click Save while a file is in staging, the file is saved, but it's not under version control yet. That is, if you were to make another Save while in staging, you wouldn't be able to go back to your earlier version. To version control the file, it must first go to the next stage.
+    </p>
+
+    <p>
+    To advance from working to stage, used the command "git add FILENAME" This file is now staged. You can check with git status. If you were to modify your file while it's staged and clicked Saved, the new Saved version is NOT staged. You have to manually add it. Staging a file essentially tells Git, "This is a specific version of a file and it's ready to be moved onto the next stage." When you add a file to staging, it's similar to using Save As. However, unlike MS Word, Save As does not automatically switch you to the Save As version. If you were to make changes to your file after it's staged, it's not to the file that you just staged. 
+    </p>
+
+    <p>
+    The final stage of git version control is committed. When I said earlier that staging is similar to Save As, it's more like it's half way similar. When you use Save As, you hopefully give the file a descriptive name so you know how it's different from previous versions. The command git commit -m "MESSAGE" saves the staged version of the file and the message is your description of the new version. Once you've commited, you've saved the current version of your file and you can return it anytime!
+    </p>
+
+    <h2>Benefits of Using GitHub to store code</h2>
+
+    <p>
+      Previously we've been working on our local machine and the git repositories are located on our personal machine. GitHub is a website where you can host remote repositories. Depending on permissions, people can access remote repositories. This is especially useful because it promotes collaboration and working together.
+
+    </p>
+
+    <p>
+      Say I'm working on a big project and there's several components that I want to work with other people on. I could email them all my files, and they could email me back with their modifications, but it'd be a real pain to make sure everyone is working on the same version of the files, and I'd have to send out the modified code everyday so that people are working on the most updated versions.
+    </p>
+
+    <p>
+    This is where GitHub shines. Now there's a repo that my collaborators can access to pull down code. They then send their modified files back up to a branch of the repo, I can review their changes and make sure they do what I want, and then I can merge them into the master repo.  Now my  collaborators can access the newest official versions of the file. If something goes wrong, we can always access previous versions as well. All in  all, GitHub makes collaboration awesome.
+    </p>
+
+    <p> 
+    Okay, there's still a lot more to mention about GitHub. I didn't talk about push, pull, and branches, but that'll be for another time. Hope this made sense. 
     </p>
 
       <!-- copy and paste as many sections as you want to add paragraphs -->
