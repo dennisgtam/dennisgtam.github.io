@@ -2,8 +2,8 @@
 	margin: auto;
 	width: 80%;
 	border: 2px solid red;
-	top: 200px;
 	position: relative;
+	top: 100px;
 }
 
 #header-table{
@@ -13,8 +13,8 @@
 }
 
 #footer-table{
-	position: fixed;
-	left: 10%;
+	position: relative;
+	left: 0;
 	bottom: 0;
 	display: block;
 }
@@ -49,6 +49,10 @@ h1{
 
 .chunk-img{
 	display: block;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width:  100%;
+	height: 150px;
 }
 
 .chunk-p{
