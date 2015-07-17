@@ -1,0 +1,57 @@
+.main-body{
+	margin: auto;
+	width: 80%;
+	border: 2px solid red;
+	position: relative;
+	top: 20px;
+}
+
+#header-table{
+	position: fixed;
+	right: 10%;
+	top: 0;
+	display: block;
+}
+
+#footer-table{
+	position: fixed;
+	left: 10%;
+	bottom: 0;
+	display: block;
+}
+
+td a{
+	display: inline-block;
+	margin: 5px 10px 5px 10px;
+}
+
+h1{
+
+}
+
+#head-image{
+	margin-top: 5px;
+	margin-bottom:  30px;
+	width: 100%;
+	border: 1px solid blue;
+}
+
+#center{
+	text-align: center;
+}
+
+.chunk{
+	display: inline-block;
+	margin: 30px 100px 30px 100px;
+	border: 1px solid green;
+	width: 30%;
+	vertical-align: top;
+}
+
+.chunk-img{
+	display: block;
+}
+
+.chunk-p{
+	text-align: left;
+}
