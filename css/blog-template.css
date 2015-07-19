@@ -1,0 +1,36 @@
+#head-body{
+
+	margin: auto;
+	width: 80%;
+	height: 20px;
+	border: 2px solid red;
+	position: relative;
+	top: 100px;
+	display: block;
+}
+
+#header-table{
+	position: fixed;
+	display: block;
+	right: 10%;
+}
+
+#blog-nav-wrapper{
+	white-space: nowrap;
+	border: 1px solid black;
+
+}
+
+#blog-nav-wrapper div{
+	text-align: center;
+	display: inline-block;
+	width: 25%;
+}
+
+#blog{
+	margin: auto;
+	width: 80%;
+	border: 2px solid red;
+	position: relative;
+	top: 230px;
+}
