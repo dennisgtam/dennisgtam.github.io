@@ -3,7 +3,7 @@
 
 <html>
 <head>
-	<title>Title of Blog Post</title>
+	<title>Tech Blog 2: Displays!</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="../css/blog-template.css">
 </head>
@@ -27,10 +27,10 @@
 	
 
 				<div id="blog-nav-wrapper">
-					<div>Technical</div>
-					<div>Cultural</div>
-					<div>Misc</div>
-					<div>All</div>
+          			<div class="blog-nav-head"><a href="index.html">Technical</a></div>
+          <div class="blog-nav-head"><a href="index.html">Cultural</a></div>
+          <div class="blog-nav-head"><a href="index.html">Misc</a></div>
+          <div class="blog-nav-head"><a href="index.html">All</a></div>
 				</div>
 			</div>
 
@@ -38,11 +38,20 @@
 				<h1>Technical Blog 2: Element Display Types!</h1>
 				<h4>July 19th, 2015</h4>
 
-				<p>Today I'm writing about a topic that caused me a lot of grief while I was working through the challenges. I didn't even know the difference between display types. Certain positioning attributes don't work for every display type and it took me awhile to try and figure it out</p>
+				<p>Today I'm writing about a topic that caused me a lot of grief while I was working through the challenges. I didn't even know the difference between display types. Certain positioning attributes don't work for every display type and it took me awhile to try and figure it out. I know there's a lot of jargon there, but some examples should clear it up.</p>
 
-				<p>Every element in a HTML file can be assigned a display type. Usually we do this inside of a css file. There are 3 primary types of displays. We'll use some colored div blocks to show what they look like.</p>
+				<p>Every element in a HTML file can be assigned a display type. Usually we do this inside of a css file by writing "display: [TYPE]". There are 3 primary types of displays. Instead of writing many paragraphs of text, I put together a little HTML+CSS demonstration. We'll use some colored div blocks to show what they look like.</p>
 
-				<p></p>
+				<p>First, let's look at the code</p>
+
+				<img class="body-image" src="../imgs/Display_Example.png">
+
+				<p>I have 3 sets of divs each containing 3 divs. Notice in the css file, that I've set heights and widths for every type of div. They also have different color borders to help differentiate them. The text inside the div is pretty explanatory. Okay! Now let's have a look this will all look like when rendered by a browser.</p>
+
+				<img class="body-image" src="../imgs/Display_Rendered_example.png">
+
+
+				<p>When to use each type of display is something I'm still getting used to. Many HTML elements are a certain display type by default. For example, paragraphs and headers are block level elements. Image and links are inline elements. </p>
 
 			</div>
 		</body>
