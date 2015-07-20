@@ -44,8 +44,8 @@ h1{
 
 .chunk{
 	display: inline-block;
-	margin: 30px 100px 30px 100px;
-	width: 30%;
+	margin: 25px 100px 25px 100px;
+	width: 25%;
 	height: 400px;
 	vertical-align: top;
 	overflow: hidden;
