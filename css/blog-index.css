@@ -2,7 +2,6 @@
 	margin: auto;
 	width: 80%;
 	height: 1500px;
-	border: 2px solid red;
 	position: relative;
 	top: 50px;
 }
@@ -13,18 +12,49 @@
 	display: block;
 }
 
+#header-table a{
+	color: black;
+	font-size: 28px;
+	margin-left:  5px;
+	margin-right: 5px;
+	text-decoration: none;
+}
+
+
+
 #blog-nav-wrapper{
 	white-space: nowrap;
 	border: 2px solid black;
 }
 
 .blog-nav-head{
+	font-size: 28px;
 	display: inline-block;
 	width: 25%;
 	text-align:  center;
+	text-decoration: none;
+}
+
+.blog-nav-head a{
+	text-decoration: none;
+}
+
+.blog-nav-head a:visited{
+	color: black;
+}
+
+#date-bar{
+	display: relative;
+	top: 15px;
+	float: right;
+	height: 90%;
+	width: 29%;
+	margin-top: 10px;
+	border: 2px solid  black;
 }
 
 .blog-chunk{
+	font-size: 22px;
 	width: 60%;
 	height: 20%;
 	border: 2px solid black;
@@ -34,6 +64,14 @@
 	overflow: hidden;
 }
 
+.blog-date{
+	font-size: 16px;
+}
+
 h1{
 	text-align: center;
+}
+
+h3 a{
+	text-decoration: none;
 }
