@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+  <title>Tech Blog 3</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../css/blog-template.css">
+</head>
+
+
+    <body>
+
+      <div id="header-table">
+        <table>
+          <tr>
+          <td><a href="../index.html">Home</a></td>
+              <td><a href="index.html">Blog</a></td>
+              <td><a href="https://github.com/dennisgtam">Projects</a></td>
+              <td><a href="#">Contact</a></td>
+              <td><a href="#">About</a></td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="head-body">
+  
+
+        <div id="blog-nav-wrapper">
+          <div class="blog-nav-head"><a href="index.html">Technical</a></div>
+          <div class="blog-nav-head"><a href="index.html">Cultural</a></div>
+          <div class="blog-nav-head"><a href="index.html">Misc</a></div>
+          <div class="blog-nav-head"><a href="index.html">All</a></div>
+
+        </div>
+      </div>
+
+      <div id="blog">
+        <h1>Technical Blog 3 Arrays and Hashes</h1>
+        <h4>July 27th, 2015</h4>
+
+        <P>This week I'm going to talk about two very important and different data structures: arrays and hashes. Let's dive right into it.</P>
+
+        <h2>Arrays</h2>
+
+        <p>An array is a data structure that can hold multiple values. Unlike other languages, Ruby arrays can be of any size. They can also contain multiple types of objects. An array can contain strings, integers, arrays, and hashes.</p>
+
+        <p>Arrays are like ordered lists. You can access the elements of the list with an index. The index starts at zero. Thus, to access the first element of the list we call array_name[0]. The second element would be accessed with array_name[1]. You can also access the last element with array_name[-1], the second to last element with array_name[-2] etc.</p>
+
+        <p>The order of the elements is determined when you create the list and when you add or remove elements. Two of the primary methods to add and remove elements from an array are push and pop respectively. Let's take a look at some code.</p>
+
+        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">my_array <span style="color: #333333">=</span> <span style="color: #333333">[</span><span style="background-color: #fff0f0">&#39;first&#39;</span>, <span style="background-color: #fff0f0">&#39;second&#39;</span>, <span style="background-color: #fff0f0">&#39;third&#39;</span><span style="color: #333333">]</span>
+my_array<span style="color: #333333">[</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">]</span> <span style="color: #888888">#=&gt; &#39;first&#39;</span>
+my_array<span style="color: #333333">[-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">]</span> <span style="color: #888888">#=&gt; &#39;third&#39;</span>
+
+my_array<span style="color: #333333">.</span>push(<span style="background-color: #fff0f0">&#39;fourth&#39;</span>) <span style="color: #888888">#adds an element to end of the list</span>
+my_array<span style="color: #333333">[-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">]</span> <span style="color: #888888">#=&gt; &#39;fourth&#39;</span>
+
+my_array<span style="color: #333333">.</span>pop <span style="color: #888888">#removes last element of list</span>
+my_array<span style="color: #333333">[-</span><span style="color: #0000DD; font-weight: bold">1</span><span style="color: #333333">]</span> <span style="color: #888888">#=&gt; &#39;third&#39;</span>
+</pre></div>
+
+        <p>One of the most common applications of lists is to iterate over each element and do something to it. This is best accomplished with a "each do" type of statement. Let's look at a program that will find the largest integer in a list.</p>
+
+        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">largest_integer</span>(list_of_nums)
+  largest <span style="color: #333333">=</span> list_of_nums<span style="color: #333333">[</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">]</span>
+  list_of_nums<span style="color: #333333">.</span>each  <span style="color: #008800; font-weight: bold">do</span> <span style="color: #333333">|</span>num<span style="color: #333333">|</span><span style="color: #888888">#This is the each do loop. For each &quot;num&quot; in list_of_nums do the following:</span>
+    <span style="color: #008800; font-weight: bold">if</span> num <span style="color: #333333">&gt;</span> largest
+      largest <span style="color: #333333">=</span> num
+    <span style="color: #008800; font-weight: bold">end</span>
+  <span style="color: #008800; font-weight: bold">end</span>
+  <span style="color: #008800; font-weight: bold">return</span> largest
+<span style="color: #008800; font-weight: bold">end</span>
+</pre></div>
+
+      <p>The method takes in a list of integers. To walk through step by step, the variable largest is set to the first integer in the array. Next, we iterate through the array with a "each do" loop. The loop compares each element of the array with largest. As it goes through, if an element is bigger than largest, largest is assigned that new value. In the end, we get the largest number.</p>
+
+      <h2>Hashes</h2>
+
+      <P>Hashes are similar to arrays in that they also store values. However, they store elements in a key value pair. It'll make more sense with a bit of code.</P>
+
+      <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">my_hash <span style="color: #333333">=</span> { first_key: <span style="background-color: #fff0f0">&#39;first_value&#39;</span>, second_key: <span style="background-color: #fff0f0">&#39;second_value&#39;</span>, third_key: <span style="background-color: #fff0f0">&#39;third_value&#39;</span>}
+</pre></div>
+
+      <p>There are multiple ways to assign values to a hash but the above is just one way. As you can see, each value is attached to a key. Unlike arrays, my_hash[0] will not do anything. That's because hashes are not ordered and "first element" in a hash doesn't mean anything. It's a bit complicated as to why, but we may get to that in a future post. To access a value, we call it's key. Here's some code.</p>
+
+      <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">my_hash<span style="color: #333333">[</span><span style="color: #AA6600">:first_key</span><span style="color: #333333">]</span> <span style="color: #888888">#=&gt; &#39;first_value&#39;</span>
+my_hash<span style="color: #333333">[</span><span style="color: #AA6600">:second_key</span><span style="color: #333333">]</span> <span style="color: #888888">#=&gt; &#39;second_value&#39;</span>
+my_hash<span style="color: #333333">[</span><span style="color: #AA6600">:third_key</span><span style="color: #333333">]</span> <span style="color: #888888">#=&gt; &#39;third_value&#39;</span>
+</pre></div>
+
+      <p>Hashes are very good for storing descriptive information. A key can tell you what kind of value is being accessed. It's a lot more descriptive than array[3]. Let's have a look.</p>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">personal_hash <span style="color: #333333">=</span> {first_name: <span style="background-color: #fff0f0">&#39;Dennis&#39;</span>, <span style="color: #AA6600">age</span>: <span style="color: #0000DD; font-weight: bold">26</span>, <span style="color: #AA6600">sex</span>: <span style="background-color: #fff0f0">&#39;male&#39;</span>}
+personal_array <span style="color: #333333">=</span> <span style="color: #333333">[</span><span style="background-color: #fff0f0">&#39;Dennis&#39;</span>, <span style="color: #0000DD; font-weight: bold">26</span>, <span style="background-color: #fff0f0">&#39;male&#39;</span><span style="color: #333333">]</span>
+</pre></div>
+
+
+      <p>From the above, personal_hash[:first_name] and personal_array[0] both return the same element. As does personal_hash[:sex] and personal_array[2]. However, if someone changes the array, the index could be changed so array[2] could point to something else. On the other hand, the keys in always point to a certain value.</p>
+
+      <p>There's a lot more to hash but I'm well over my timebox. We'll get back to hashes in more detail in the future. Thanks for reading!</p>
+
+
+      </div>
+    </body>
+  </div>
+
+
+</body>
+</html>
