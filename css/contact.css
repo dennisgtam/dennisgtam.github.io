@@ -1,0 +1,42 @@
+*{
+	font-family: Arial;
+}
+
+#header-table{
+	position: fixed;
+	display: block;
+	right: 10%;
+	font-size: 28px
+}
+
+#header-table a{
+	color: black;
+	margin-left:  5px;
+	margin-right: 5px;
+	text-decoration: none;
+}
+
+#center-column{
+	margin: auto;
+	width: 70%;
+	position: relative;
+	top: 100px;
+}
+
+.media-box{
+	display: inline-block;
+	border: 3px solid white;
+	width: 49%;
+	height: 250px;
+	text-align: center;
+	line-height: 250px;
+	background-color: #75D1FF;
+
+}
+
+.media-box a {
+	text-decoration: none;
+	font-size: 40px;
+	color: white;
+
+}
