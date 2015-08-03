@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+	<title>Technical Blog Post 4: Map</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/blog-template.css">
+</head>
+
+
+		<body>
+
+			<div id="header-table">
+				<table>
+					<tr>
+					<td><a href="../index.html">Home</a></td>
+      				<td><a href="index.html">Blog</a></td>
+      				<td><a href="#">Projects</a></td>
+      				<td><a href="../contact.html">Contact</a></td>
+      				<td><a href="#">About</a></td>
+					</tr>
+				</table>
+			</div>
+
+			<div id="head-body">
+	
+
+				<div id="blog-nav-wrapper">
+          <div class="blog-nav-head"><a href="index.html">Technical</a></div>
+          <div class="blog-nav-head"><a href="index.html">Cultural</a></div>
+          <div class="blog-nav-head"><a href="index.html">Misc</a></div>
+          <div class="blog-nav-head"><a href="index.html">All</a></div>
+				</div>
+			</div>
+
+			<div id="blog">
+
+				<h1>Technical Blog 4: Map</h1>
+				<h4>August 2, 2015</h4>
+
+				<p>This week I'm going over the map enumberable method. It's a very powerful method that can be called on all enumberables including arrays and hashes. Map is a pretty simple method that is passed a block. Map then applies the block to every element in the array and returns an array of the modified elements. </p>
+
+				<p>Let's first look at how this differs from a each do method.</p>
+
+			<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #007020">test</span> <span style="color: #333333">=</span> <span style="color: #333333">[</span><span style="color: #0000DD; font-weight: bold">1</span>,<span style="color: #0000DD; font-weight: bold">2</span>,<span style="color: #0000DD; font-weight: bold">3</span><span style="color: #333333">]</span>
+<span style="color: #007020">test</span><span style="color: #333333">.</span>each <span style="color: #008800; font-weight: bold">do</span> <span style="color: #333333">|</span>num<span style="color: #333333">|</span>
+    num <span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>
+<span style="color: #008800; font-weight: bold">end</span>
+
+<span style="color: #007020">test</span> <span style="color: #888888">#=&gt; [1,2,3]</span>
+</pre></div>
+
+
+
+				<p>The above method adds one to the each element of the array. But the each do method does not modify the contents of the original array. It does not add one to the element, and then replace the element with the sum. But you could do this instead. </p>
+
+				<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #007020">test</span> <span style="color: #333333">=</span> <span style="color: #333333">[</span><span style="color: #0000DD; font-weight: bold">1</span>,<span style="color: #0000DD; font-weight: bold">2</span>,<span style="color: #0000DD; font-weight: bold">3</span><span style="color: #333333">]</span>
+added <span style="color: #333333">=</span> <span style="color: #333333">[]</span>
+<span style="color: #007020">test</span><span style="color: #333333">.</span>each <span style="color: #008800; font-weight: bold">do</span> <span style="color: #333333">|</span>num<span style="color: #333333">|</span>
+    added <span style="color: #333333">&lt;&lt;</span> num <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>
+<span style="color: #008800; font-weight: bold">end</span>
+    
+added <span style="color: #888888">#=&gt; [2,3,4]</span>
+</pre></div>
+
+			<p>We now have a new array that has the elements of test added one. If we were to call test above, we would get [1,2,3]. Again this is because the each do method does not modify the original array. It's a bit tedious to have to create a new array every time and push in the changes with an each do loop. But the map method can do exactly that! </p>
+
+			<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #007020">test</span> <span style="color: #333333">=</span> <span style="color: #333333">[</span><span style="color: #0000DD; font-weight: bold">1</span>,<span style="color: #0000DD; font-weight: bold">2</span>,<span style="color: #0000DD; font-weight: bold">3</span><span style="color: #333333">]</span>
+<span style="color: #007020">test</span><span style="color: #333333">.</span>map! <span style="color: #008800; font-weight: bold">do</span> <span style="color: #333333">|</span>num<span style="color: #333333">|</span>
+    num  <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>
+<span style="color: #008800; font-weight: bold">end</span>
+
+<span style="color: #007020">test</span> <span style="color: #888888">#=&gt; [2,3,4]</span>
+</pre></div>
+
+			<p>The above was the map! destructive method. As you can see, test now returns an array with it's elements increased by 1. The non destrutive method returns a a new array with its elements increased by 1 but the original array is unmodified.</p>
+
+			<p>It's important to note that map will add/replace (non destructive/destructive) the results of the block on the element. If the block returns nil on an element, nil will be added/replaced into the array.</p>
+
+			<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #007020">test</span> <span style="color: #333333">=</span> <span style="color: #333333">[</span><span style="background-color: #fff0f0">&#39;olivia&#39;</span>,<span style="background-color: #fff0f0">&#39;jamie&#39;</span>,<span style="background-color: #fff0f0">&#39;heidi&#39;</span>,<span style="color: #0000DD; font-weight: bold">1</span>,<span style="color: #0000DD; font-weight: bold">2</span>,<span style="color: #0000DD; font-weight: bold">3</span><span style="color: #333333">]</span>
+<span style="color: #007020">test</span><span style="color: #333333">.</span>map! <span style="color: #008800; font-weight: bold">do</span> <span style="color: #333333">|</span>el<span style="color: #333333">|</span>
+    el<span style="color: #333333">.</span>capitalize <span style="color: #008800; font-weight: bold">if</span> el<span style="color: #333333">.</span>is_a?(<span style="color: #007020">String</span>)
+<span style="color: #008800; font-weight: bold">end</span>
+
+<span style="color: #007020">test</span> <span style="color: #888888">#=&gt; [&#39;Olivia&#39;,&#39;Jamie&#39;,&#39;Heidi&#39;, nil, nil, nil]</span>
+</pre></div>
+
+			<p>In the above, the block returns a capitalized string if the input is a string. Since there's nothing written for the case where the input is not a string, the block returns nil. We can fix this by adding an else statement.</p>
+
+			<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #007020">test</span> <span style="color: #333333">=</span> <span style="color: #333333">[</span><span style="background-color: #fff0f0">&#39;olivia&#39;</span>,<span style="background-color: #fff0f0">&#39;jamie&#39;</span>,<span style="background-color: #fff0f0">&#39;heidi&#39;</span>,<span style="color: #0000DD; font-weight: bold">1</span>,<span style="color: #0000DD; font-weight: bold">2</span>,<span style="color: #0000DD; font-weight: bold">3</span><span style="color: #333333">]</span>
+<span style="color: #007020">test</span><span style="color: #333333">.</span>map! <span style="color: #008800; font-weight: bold">do</span> <span style="color: #333333">|</span>el<span style="color: #333333">|</span>
+    <span style="color: #008800; font-weight: bold">if</span> el<span style="color: #333333">.</span>is_a?(<span style="color: #007020">String</span>)
+        el<span style="color: #333333">.</span>capitalize
+    <span style="color: #008800; font-weight: bold">else</span>
+        el
+    <span style="color: #008800; font-weight: bold">end</span>
+<span style="color: #008800; font-weight: bold">end</span>
+
+<span style="color: #007020">test</span> <span style="color: #888888">#=&gt; [&#39;Olivia&#39;,&#39;Jamie&#39;,&#39;Heidi&#39;, 1, 2, 3]</span>
+</pre></div>
+
+			<p>I'm still pretty new to programming but if I were to give the primary reason to use each do, it'd be for when you want to return the <i>modified elements</i> of an array according to a given block. If you want to return a <i>modified array</i> of elements according to a block, use map.</p>
+
+
+
+
+
+
+			</div>
+
+
+
+
+
+
+
+
+
+
+
+		</body>
+	</div>
+
+
+</body>
+</html>
