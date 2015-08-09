@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+	<title>Tech Blog 5: Classes!</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/blog-template.css">
+</head>
+
+
+		<body>
+
+			<div id="header-table">
+				<table>
+						<tr>
+					<td><a href="../index.html">Home</a></td>
+      				<td><a href="index.html">Blog</a></td>
+      				<td><a href="#">Projects</a></td>
+      				<td><a href="#">Contact</a></td>
+      				<td><a href="#">About</a></td>
+					</tr>
+				</table>
+			</div>
+
+			<div id="head-body">
+	
+
+					<div id="blog-nav-wrapper">
+          <div class="blog-nav-head"><a href="index.html">Technical</a></div>
+          <div class="blog-nav-head"><a href="index.html">Cultural</a></div>
+          <div class="blog-nav-head"><a href="index.html">Misc</a></div>
+          <div class="blog-nav-head"><a href="index.html">All</a></div>
+				</div>
+			</div>
+
+			<div id="blog">
+
+				<h1>Tech Blog 5: Classes</h1>
+				<<h4>August 8, 2015</h4>
+
+				<p>In this blog post I want to talk about classes. You can think of classes as blueprints for an object. We can define variables and methods inside a class, and every object of that class can access those methods. I know it sounds very jargon heavy but let's dive into an example and talk through it.</p>
+
+				<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Bike</span>
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">initialize</span>(max_pedal_gear, min_pedal_gear, max_wheel_gear, min_wheel_gear)
+		<span style="color: #3333BB">@max_pedal_gear</span> <span style="color: #333333">=</span> max_pedal_gear
+		<span style="color: #3333BB">@min_pedal_gear</span> <span style="color: #333333">=</span> min_pedal_gear
+		<span style="color: #3333BB">@max_wheel_gear</span> <span style="color: #333333">=</span> max_wheel_gear
+		<span style="color: #3333BB">@min_wheel_gear</span> <span style="color: #333333">=</span> min_wheel_gear
+
+		<span style="color: #3333BB">@pedal_gear</span> <span style="color: #333333">=</span> <span style="color: #3333BB">@max_pedal_gear</span><span style="color: #333333">/</span><span style="color: #0000DD; font-weight: bold">2</span>
+		<span style="color: #3333BB">@wheel_gear</span> <span style="color: #333333">=</span> <span style="color: #3333BB">@max_wheel_gear</span><span style="color: #333333">/</span><span style="color: #0000DD; font-weight: bold">2</span>
+		<span style="color: #3333BB">@gear_ratio</span> <span style="color: #333333">=</span> <span style="color: #3333BB">@pedal_gear</span><span style="color: #333333">.</span>to_f<span style="color: #333333">/</span><span style="color: #3333BB">@wheel_gear</span><span style="color: #333333">.</span>to_f
+
+		<span style="color: #3333BB">@units_travelled</span> <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>
+	<span style="color: #008800; font-weight: bold">end</span>
+
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">shift_pedal</span>(direction)
+		<span style="color: #008800; font-weight: bold">if</span> direction <span style="color: #333333">==</span> <span style="background-color: #fff0f0">&quot;up&quot;</span>
+			<span style="color: #3333BB">@pedal_gear</span> <span style="color: #333333">==</span> <span style="color: #3333BB">@max_pedal_gear</span> ? (<span style="color: #007020">puts</span> <span style="background-color: #fff0f0">&quot;Pedal gear is already maxed&quot;</span>) : (<span style="color: #3333BB">@pedal_gear</span> <span style="color: #333333">+=</span> <span style="color: #0000DD; font-weight: bold">1</span>)
+		<span style="color: #008800; font-weight: bold">elsif</span> direction <span style="color: #333333">==</span> <span style="background-color: #fff0f0">&quot;down&quot;</span>
+			(<span style="color: #3333BB">@pedal_gear</span> <span style="color: #333333">==</span> <span style="color: #3333BB">@min_pedal_gear</span>) ? (<span style="color: #007020">puts</span> <span style="background-color: #fff0f0">&quot;Pedal gear is already minimized&quot;</span>) : <span style="color: #3333BB">@pedal_gear</span> <span style="color: #333333">-=</span><span style="color: #0000DD; font-weight: bold">1</span>
+		<span style="color: #008800; font-weight: bold">end</span>
+		<span style="color: #3333BB">@gear_ratio</span> <span style="color: #333333">=</span> <span style="color: #3333BB">@pedal_gear</span><span style="color: #333333">.</span>to_f<span style="color: #333333">/</span><span style="color: #3333BB">@wheel_gear</span><span style="color: #333333">.</span>to_f
+		<span style="color: #007020">puts</span> <span style="background-color: #fff0f0">&quot;You shifted your pedal gear </span><span style="background-color: #eeeeee">#{</span>direction<span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0">. Your gear ratio is now </span><span style="background-color: #eeeeee">#{</span><span style="color: #3333BB">@gear_ratio</span><span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0">&quot;</span>
+	<span style="color: #008800; font-weight: bold">end</span>
+
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">shift_wheel</span>(direction)
+		<span style="color: #008800; font-weight: bold">if</span> direction <span style="color: #333333">==</span> <span style="background-color: #fff0f0">&quot;up&quot;</span>
+			(<span style="color: #3333BB">@wheel_gear</span> <span style="color: #333333">==</span> <span style="color: #3333BB">@max_wheel_gear</span>) ? (<span style="color: #007020">puts</span> <span style="background-color: #fff0f0">&quot;Wheel gear is already maxed&quot;</span>) : (<span style="color: #3333BB">@wheel_gear</span> <span style="color: #333333">+=</span> <span style="color: #0000DD; font-weight: bold">1</span>)
+		<span style="color: #008800; font-weight: bold">elsif</span> direction <span style="color: #333333">==</span> <span style="background-color: #fff0f0">&quot;down&quot;</span>
+			(<span style="color: #3333BB">@wheel_gear</span> <span style="color: #333333">==</span> <span style="color: #3333BB">@min_wheel_gear</span>) ? (<span style="color: #007020">puts</span> <span style="background-color: #fff0f0">&quot;Wheel gear is already minimized&quot;</span>) : (<span style="color: #3333BB">@wheel_gear</span> <span style="color: #333333">-=</span><span style="color: #0000DD; font-weight: bold">1</span>)
+		<span style="color: #008800; font-weight: bold">end</span>
+		<span style="color: #3333BB">@gear_ratio</span> <span style="color: #333333">=</span> <span style="color: #3333BB">@pedal_gear</span><span style="color: #333333">.</span>to_f<span style="color: #333333">/</span><span style="color: #3333BB">@wheel_gear</span><span style="color: #333333">.</span>to_f
+		<span style="color: #007020">puts</span> <span style="background-color: #fff0f0">&quot;You shifted your wheel gear </span><span style="background-color: #eeeeee">#{</span>direction<span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0">. Your gear ratio is now </span><span style="background-color: #eeeeee">#{</span><span style="color: #3333BB">@gear_ratio</span><span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0">&quot;</span>
+	<span style="color: #008800; font-weight: bold">end</span>
+
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">peddle</span>(rotations)
+		<span style="color: #3333BB">@units_travelled</span> <span style="color: #333333">=</span> <span style="color: #3333BB">@units_travelled</span> <span style="color: #333333">+</span> rotations <span style="color: #333333">*</span> <span style="color: #3333BB">@gear_ratio</span><span style="color: #333333">.</span>to_f
+		<span style="color: #007020">puts</span> <span style="background-color: #fff0f0">&quot;You&#39;ve travelled </span><span style="background-color: #eeeeee">#{</span>rotations<span style="color: #333333">*</span><span style="color: #3333BB">@gear_ratio</span><span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0"> in </span><span style="background-color: #eeeeee">#{</span>rotations<span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0"> rotations.&quot;</span>
+		<span style="color: #007020">puts</span> <span style="background-color: #fff0f0">&quot;This bike has travelled a total of </span><span style="background-color: #eeeeee">#{</span><span style="color: #3333BB">@units_travelled</span><span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0"> so far.&quot;</span>
+	<span style="color: #008800; font-weight: bold">end</span>
+<span style="color: #008800; font-weight: bold">end</span>
+</pre></div>
+
+
+				<p>Here I have primitively modeled a bicycle. We've come a long way from penny farthing bicycles, the bikes with a massive front and ridiculously tiny rear wheel. Those aren't really manufactured anymore ever since we've figured out how gear ratios work. Most modern bikes have two sets of gears, one attached to the pedal and another to the rear wheel. Each gear in the set has a certain number of teeth. At any one time, a bike can have one active pedal and one active wheel gear. The gear ratio is the number of teeth on the active pedal gear divided by the number of teeth on the active wheel gear. A larger gear ratio will result in the bike travelling a farther distance for a given number of rotations of the bike pedal gears.</p>
+
+				<p>But not every bike has the same gear system. Very high performance bikes can contain gear sets of many many gears. On the other hand, fixed gear bikes only have one pedal and one wheel gear. Still, all bikes will contain a non zero number of gears. Thus our bike class, which is supposed to be representative of all bikes, should contain instance variables of gears. Each bike object has a specific number of gears which are determined by instance variables.</p>
+
+				<p>Our bike class should contain variables for the max and min teeth gears, gear ratio, active pedal and wheel gears, and the distance traveled on the bike all of which are declared in the initialize method which is called whenever we create a new Bike object.</p>
+
+				<p>Okay, now we're ready to create a bike object from the class. To make our bike, we provide the max and min pedal and wheel values. The active wheel and pedal gears are set to half of the respective max values. Gear ratio is calculated and the distance traveled is set to 0.</p>
+
+				<p>In order to change the gear ratio, we need to change the active gear. We can shift up to a gear with more teeth, or shift down to a gear with less teeth. Every bike needs to be able to do this so I created shift_pedal and  shift_wheel methods. We can call these methods on bike objects to change the gear ratio.</p>
+
+				<p>Finally a bike needs to be peddled to move. I created a peddle method that calculates how far the bike has travelled for a given number of rotations at the current gear ratio. It also calculates the total number of units travelled by the bike.</p>
+			</div>
+
+
+
+
+
+
+
+
+
+
+
+		</body>
+	</div>
+
+
+</body>
+</html>
