@@ -23,19 +23,7 @@
 	top: 100px;
 }
 
-.media-box-1{
-	display: inline-block;
-	border: 3px solid white;
-	width: 49%;
-	height: 250px;
-	text-align: center;
-	line-height: 250px;
-	background-color: #75D1FF;
-
-
-}
-
-.media-box-2{
+.media-box{
 	display: inline-block;
 	border: 3px solid white;
 	width: 49%;
@@ -46,26 +34,9 @@
 
 }
 
-.media-box  {
+.media-box a {
 	text-decoration: none;
 	font-size: 40px;
 	color: white;
 
-}
-
-.media-box-2{
-	display: inline-block;
-	border: 3px solid white;
-	width: 49%;
-	height: 250px;
-	text-align: center;
-	line-height: 250px;
-	background-color: #75D1FF;
-}
-
-
-.col-1{
-	text-decoration: none;
-	font-size: 40px;
-	color: white;
 }
