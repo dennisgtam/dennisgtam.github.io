@@ -1,26 +1,50 @@
 *{
-	font-family: Arial;
+	font-family: Helvetica;
+
 }
 
 .main-body{
 	margin: auto;
 	width: 80%;
 	position: relative;
+	top: 20px;
+	background-color: #CCD6E0;
+}
+
+.upper-body{
+	margin: auto;
+	width: 80%;
+	position: relative;
 	top: 100px;
+	background-color: white;
+	border-radius: 25px
+}
+
+#header1{
+	font-size: 40px;
+	color: white;
+	background-color: #A31919;
+	font-family: Helvetica;
+	padding-top: 20px;
+	padding-bottom: 20px
 }
 
 #header-table{
 	position: fixed;
 	right: 10%;
 	display: block;
+	border-radius: 12px;
+	color:  white;
+	background-color: #A31919;
 }
 
 #header-table a{
-	color: black;
-	font-size: 28px;
+	color: white;
+	font-size: 32px;
 	margin-left:  5px;
 	margin-right: 5px;
 	text-decoration: none;
+
 }
 
 td a{
@@ -28,12 +52,22 @@ td a{
 	margin: 5px 10px 5px 10px;
 }
 
+#head-wrapper{
+	border-radius: 25px
+	width: 80%;
+}
+
 h1{
+	color: white;
+	background-color: #A31919;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-bottom: 0px
 
 }
 
 #head-image{
-	margin-top: 5px;
+	margin-top: 0px;
 	margin-bottom:  30px;
 	width: 100%;
 }
@@ -46,9 +80,11 @@ h1{
 	display: inline-block;
 	margin: 25px 100px 25px 100px;
 	width: 25%;
-	height: 400px;
+	height: 350px;
 	vertical-align: top;
 	overflow: hidden;
+	background-color: #939AA2;
+	border-radius: 12px;
 }
 
 .chunk-img{
@@ -60,8 +96,11 @@ h1{
 }
 
 .chunk-p{
+	top: 80px;
+	display: inline-block;
 	text-align: left;
 	font-size: 24px;
+
 }
 
 .chunk-link{
@@ -69,8 +108,10 @@ h1{
 	height: 100px;
 	display: inline-block;
 	vertical-align: center;
-	background-color: #D3D3D3;
-
+	border-radius: 12px;
+	color: white;
+	background-color: #A31919;
+	text-decoration: none;
 }
 
 .chunk-link a{
@@ -78,6 +119,7 @@ h1{
 	position: relative;
   	top: 40%;
   	text-decoration: none;
+  	color: white;
 }
 
 .link-box{
