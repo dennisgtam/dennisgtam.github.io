@@ -125,3 +125,20 @@ h1{
 .link-box{
 	color: red;
 }
+
+#footer-table{
+	display: block;
+	border-radius: 12px;
+	color:  white;
+	background-color: #A31919;
+	text-decoration: none;
+}
+
+#footer-table a{
+	color: white;
+	font-size: 24px;
+	margin-left:  5px;
+	margin-right: 5px;
+	text-decoration: none;
+
+}
