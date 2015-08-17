@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+	<title>Technical Blog 6: Inheritance and Composition</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/blog-template.css">
+</head>
+
+
+		<body>
+
+      <div id="header-table">
+      	<table>
+      		<tr>
+      			<td><a href="#">Home</a></td>
+      			<td><a href="blog/index.html">Blog</a></td>
+      			<td><a href="https://github.com/dennisgtam">Projects</a></td>
+      			<td><a href="contact.html">Contact</a></td>
+      			<td><a href="about.html">About</a></td>
+      		</tr>
+      	</table>
+      </div>
+
+			<div id="head-body">
+	
+
+					<div id="blog-nav-wrapper">
+          <div class="blog-nav-head"><a href="index.html">Technical</a></div>
+          <div class="blog-nav-head"><a href="index.html">Cultural</a></div>
+          <div class="blog-nav-head"><a href="index.html">Misc</a></div>
+          <div class="blog-nav-head"><a href="index.html">All</a></div>
+				</div>
+			</div>
+
+			<div id="blog">
+
+				<h1>Technical Blog 6: Inheritance and Composition</h1>
+				<h4>August 10, 2015</h4>
+
+				<p>This week we're going to talk about inheritance and composition, two things in Ruby that help with D.R.Y when 
+				working with classes. Inheritance is pretty straight forward and and easy to explain so let's dive it into first.</p>
+
+				<p>Every class in Ruby can have one class it inherits from. A parent class can have an unlimited number of children 
+				classes. However, each child class can only have one parent. The child inherits all methods the parent class has.
+				Let's look at an example.</p>
+
+				<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Employee</span>
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">initialize</span>(<span style="color: #007020">name</span>, salary)
+		<span style="color: #3333BB">@name</span> <span style="color: #333333">=</span> <span style="color: #007020">name</span>
+		<span style="color: #3333BB">@salary</span> <span style="color: #333333">=</span> salary
+	<span style="color: #008800; font-weight: bold">end</span>
+
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">introduce</span>
+		<span style="color: #007020">puts</span> <span style="background-color: #fff0f0">&quot;Hi, my name is </span><span style="background-color: #eeeeee">#{</span><span style="color: #3333BB">@name</span><span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0">&quot;</span>
+	<span style="color: #008800; font-weight: bold">end</span>
+<span style="color: #008800; font-weight: bold">end</span>
+
+<span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Chef</span> <span style="color: #333333">&lt;</span> <span style="color: #003366; font-weight: bold">Employee</span>
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">cook</span>
+		<span style="color: #007020">puts</span> <span style="background-color: #fff0f0">&quot;I&#39;m cooking&quot;</span>
+	<span style="color: #008800; font-weight: bold">end</span>
+<span style="color: #008800; font-weight: bold">end</span>
+</pre></div>
+				<p>Ok, let's look at some syntax first. The Chef class is a child of the Employee class. Thus the chef class
+				contains and has access to all the methods of its parents. As you can see, the Chef class does not have an initialize method declared inside of it. It inherits the initialize method from the Employee class. Here's an example</p>
+
+				<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">employee <span style="color: #333333">=</span> <span style="color: #003366; font-weight: bold">Employee</span><span style="color: #333333">.</span>new(<span style="background-color: #fff0f0">&quot;Will&quot;</span>,<span style="color: #0000DD; font-weight: bold">2000</span>)
+chef <span style="color: #333333">=</span> <span style="color: #003366; font-weight: bold">Chef</span><span style="color: #333333">.</span>new(<span style="background-color: #fff0f0">&quot;Adam&quot;</span>,<span style="color: #0000DD; font-weight: bold">2000</span>)
+
+employee<span style="color: #333333">.</span>introduce <span style="color: #888888">#=&gt; &quot;Hi, my name is Will.&quot;</span>
+chef<span style="color: #333333">.</span>introduce <span style="color: #888888">#=&gt; &quot;Hi, my name is Adam.&quot;</span>
+chef<span style="color: #333333">.</span>cook <span style="color: #888888">#=&gt; &quot;I&#39;m cooking&quot;</span>
+</pre></div>
+
+			<p>As you can see, we can call the introduce method on the chef object that it inherited from its Employee parent class. Chef also has its own cook method. Employee does not have access to its child method.</p>
+
+			<p>What if you want your child class to inherit parts of the its parent methods? You could copy and paste parts of it,
+			but that wouldn't be D.R.Y. Ruby helps us solve this with the super method. The super method is invoked inside the child method with the same name as its parent. </p>
+
+			<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">Server</span> <span style="color: #333333">&lt;</span> <span style="color: #003366; font-weight: bold">Employee</span>
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">initialize</span>(num_tables, <span style="color: #007020">name</span>, salary)
+		<span style="color: #3333BB">@num_tables</span> <span style="color: #333333">=</span> num_tables
+		<span style="color: #008800; font-weight: bold">super</span>(<span style="color: #007020">name</span>, salary)
+	<span style="color: #008800; font-weight: bold">end</span>
+
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">introduce</span>
+		<span style="color: #008800; font-weight: bold">super</span>()
+		<span style="color: #007020">puts</span> <span style="background-color: #fff0f0">&quot;I&#39;ll be your server tonight&quot;</span>
+	<span style="color: #008800; font-weight: bold">end</span>
+
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">busy</span>
+		<span style="color: #007020">puts</span> <span style="background-color: #fff0f0">&quot;I&#39;m serving </span><span style="background-color: #eeeeee">#{</span><span style="color: #3333BB">@num_tables</span><span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0"> tables&quot;</span>
+	<span style="color: #008800; font-weight: bold">end</span>
+<span style="color: #008800; font-weight: bold">end</span>
+
+server <span style="color: #333333">=</span> <span style="color: #003366; font-weight: bold">Server</span><span style="color: #333333">.</span>new(<span style="color: #0000DD; font-weight: bold">5</span>, <span style="background-color: #fff0f0">&quot;Clovis&quot;</span>,<span style="color: #0000DD; font-weight: bold">2000</span>)
+server<span style="color: #333333">.</span>introduce <span style="color: #888888">#=&gt; &quot;Hi, my name is Clovis.&quot;</span>
+<span style="color: #888888">#=&gt; &quot;I&#39;ll be your server tonight.&quot;</span>
+server<span style="color: #333333">.</span>busy <span style="color: #888888">#=&gt; &quot;I&#39;m serving 5 tables tonight.&quot;</span>
+</pre></div>
+			<p>As you can see, the Server's initialize method takes 3 arguments, the first is assigned an instance variable while the last two arguments are passed to its parent method with super. The introduce method calls its parent method and then continues down to the  next line where it'll put &quot;I'll be your server tonight&quot;.</p>
+
+			<p>There's an alternative way to get inheritance like behavior. Instead of declaring a parent to inherit from, we create an instance of the intended parent class in the initialization method. This is called composition. LIke inheritance, it's best illustrated with an example.</p>
+
+			<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> <span style="color: #BB0066; font-weight: bold">CompServer</span>
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">initialize</span>(num_tables, <span style="color: #007020">name</span>, salary)
+		<span style="color: #3333BB">@num_tables</span> <span style="color: #333333">=</span> num_tables
+		<span style="color: #3333BB">@employee</span> <span style="color: #333333">=</span> <span style="color: #003366; font-weight: bold">Employee</span><span style="color: #333333">.</span>new(<span style="color: #007020">name</span>,salary)
+	<span style="color: #008800; font-weight: bold">end</span>
+
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">introduce</span>
+		<span style="color: #3333BB">@employee</span><span style="color: #333333">.</span>introduce
+		<span style="color: #007020">puts</span> <span style="background-color: #fff0f0">&quot;I&#39;ll be your server tonight&quot;</span>
+	<span style="color: #008800; font-weight: bold">end</span>
+
+	<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">busy</span>
+		<span style="color: #007020">puts</span> <span style="background-color: #fff0f0">&quot;I&#39;m serving </span><span style="background-color: #eeeeee">#{</span><span style="color: #3333BB">@num_tables</span><span style="background-color: #eeeeee">}</span><span style="background-color: #fff0f0"> tables&quot;</span>
+	<span style="color: #008800; font-weight: bold">end</span>
+<span style="color: #008800; font-weight: bold">end</span>
+
+compserver <span style="color: #333333">=</span> <span style="color: #003366; font-weight: bold">CompServer</span><span style="color: #333333">.</span>new(<span style="color: #0000DD; font-weight: bold">6</span>,<span style="background-color: #fff0f0">&quot;Aaron&quot;</span>,<span style="color: #0000DD; font-weight: bold">5000</span>)
+compserver<span style="color: #333333">.</span>introduce <span style="color: #888888">#=&gt; &quot;Hi, my name is Aaron.&quot;</span>
+<span style="color: #888888">#=&gt; &quot;I&#39;ll be your server tonight.&quot;</span>
+compserver<span style="color: #333333">.</span>busy <span style="color: #888888">#= &quot;I&#39;m serving 6 tables tonight&quot;</span>
+</pre></div>
+
+		<p>Each CompServer object contains an Employee object inside of it. In the introduce method, the super method of the inheritance style is replaced with a call of the introduce method of the employee class. Like inheritance, in composition, the super/parent methods are hidden inside of the child methods.</p>
+
+
+
+
+
+			</div>
+		</body>
+	</div>
+
+
+</body>
+</html>

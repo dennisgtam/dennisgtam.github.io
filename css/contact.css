@@ -4,16 +4,20 @@
 
 #header-table{
 	position: fixed;
+	right: 16%;
 	display: block;
-	right: 10%;
-	font-size: 28px
+	border-radius: 12px;
+	color:  white;
+	background-color: #A31919;
 }
 
 #header-table a{
-	color: black;
+	color: white;
+	font-size: 32px;
 	margin-left:  5px;
 	margin-right: 5px;
 	text-decoration: none;
+
 }
 
 #center-column{
@@ -30,7 +34,8 @@
 	height: 250px;
 	text-align: center;
 	line-height: 250px;
-	background-color: #75D1FF;
+	background-color: #A31919;
+	border-radius: 15px;
 
 }
 

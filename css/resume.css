@@ -1,0 +1,84 @@
+.upper-body{
+	margin: auto;
+	width: 80%;
+	position: relative;
+	top: 100px;
+	background-color: white;
+	border-radius: 25px
+}
+
+#header1{
+	font-size: 40px;
+	color: white;
+	background-color: #A31919;
+	font-family: Helvetica;
+	padding-top: 20px;
+	padding-bottom: 20px
+}
+
+#header-table{
+	position: fixed;
+	right: 10%;
+	display: block;
+	border-radius: 12px;
+	color:  white;
+	background-color: #A31919;
+}
+
+#header-table a{
+	color: white;
+	font-size: 32px;
+	margin-left:  5px;
+	margin-right: 5px;
+	text-decoration: none;
+
+}
+
+.central{
+	margin: auto;
+	margin-top: 40px;
+	top: 800px;
+	width: 80%;
+	height: 1500px;
+	display: block;
+}
+
+#nameHeader{
+	font-weight: bold;
+	font-size: 50px;
+	display: inline-block;
+}
+
+#infochunk{
+	display: inline-block;
+	float: right;
+
+}
+
+.experienceheader{
+	text-align: center;
+	font-size: 40px;
+}
+
+.jobbox{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.jobheader{
+}
+
+.title{
+	display: inline-block;
+	font-weight: bold;
+}
+
+.date{
+	display: inline-block;
+	float: right;
+	font-style: italic;
+}
+
+.school{
+	font-weight: bold;
+}
