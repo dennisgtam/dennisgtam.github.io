@@ -1,0 +1,27 @@
+#R{
+	display: inline-block;
+	height: 200px;
+	width: 200px;
+	background-color: red;
+}
+
+#B{
+	display: inline-block;
+	height: 200px;
+	width: 200px;
+	background-color: blue;
+}
+
+#Y{
+	display: inline-block;
+	height: 200px;
+	width: 200px;
+	background-color: yellow;
+}
+
+#G{
+	display: inline-block;
+	height: 200px;
+	width: 200px;
+	background-color: green;
+}
