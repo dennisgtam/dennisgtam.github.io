@@ -1,0 +1,48 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+
+
+	<head>
+	  <meta charset="UTF-8">
+	  <link rel = "stylesheet" type = "text/css" href = "css/cheat-sheet.css">
+	</head>
+
+	<body>
+
+	<div id="central">
+		<h1>SQL Cheat Sheet</h1>
+
+		<h2>Basic Syntax</h2>
+		<p class = "code">SELECT &#60;column_name&#62;,&#60;column_name&#62;,... FROM &#60;table_name&#62; </p>
+		<p>This is the general syntax when you want to fetch something from a database. Capitals letters are not actually required but it's good practice. You can select any number of columns from a table. To select all columns from a table use "*".</p>
+
+		<h2>Ordering Rows</h2>
+		<p class = "code">SELECT &#60;column_name&#62;,&#60;column_name&#62;,... FROM &#60;table_name&#62; ORDER BY &#60;column_name&#62;
+</p>
+		<p>The ORDER BY clause orders your selected rows according to a certain column. You have to ORDER BY a column that you have returned. By default, it'll return values in ascending order. To change it to descending order, add DESC after the column_name. It's also possible to sort based on multiple columns. Just pass the ORDER BY multiple columns separated by commas. Priority is from left to right.</p>
+
+
+		<h2>Selecting Certain Rows with WHERE</h2>
+		<p class =  "code">SELECT &#60;column_name&#62; FROM &#60;table_name&#62; WHERE &#60;column_name&#62; &#60;operator&#62; &#60;operator_value&#62;</p>
+		<p>You'll often only want to select certain rows from a table. This is accomplished with the WHERE syntax. WHERE is followed by 3 arguments, the first is the column on whcih you want to filter values by, the second is the type of comparison operator you want to use, the last is the value you're filtering for. Operators include greater than (or equal to), less than (or equal to), equal, BETWEEN, LIKE, and IN. It's important to note you don't have to SELECT columns you're using the WHERE operator on.</p>
+
+		<h2>Selecting Certain Rows with several criteria using WHERE</h2>
+		<p class =  "code">SELECT &#60;column_name&#62; FROM &#60;table_name&#62; WHERE &#60;column_name&#62; &#60;operator&#62; &#60;operator_value&#62; AND &#60;column_name&#62; &#60;operator&#62; &#60;operator_value&#62;</p>
+		<p>It's possible to set multiple criteria using a WHERE clause. You can do this using AND and OR. There's not limit to how many AND and OR clauses you can use at once.AND will return all rows which meet all criteria. OR will return all rows that meet any of the criteria. </p>
+
+
+		<h2>Selecting Certain Rows with the LIKE Operator</h2>
+		<p class =  "code">SELECT &#60;column_name&#62; FROM &#60;table_name&#62; WHERE &#60;column_name&#62; LIKE &#60;pattern&#62;</p>
+		<p>LIKE is the only comparison operator that's a little difficult. It's essentially SQL's RegEx. It's most commonly used to find VarChar rows that match a certain string pattern. The most important character is the % sign. It's used to define wiledcards. It's a standin for any number of characters. For example, if you wanted to return all rows where a column contains the word "rain", you would use %rain%.</p>
+
+		<h2>Joining Two Tables</h2>
+		<p class =  "code">SELECT &#60;table_name1.&#62;&#60;column_name&#62;, &#60;table_name2.&#62;&#60;column_name&#62; FROM &#60;table_name1&#62; JOIN &#60;table_name2&#62; ON &#60;table_name1.key1 = table_name.key2&#62;</p>
+		<p>One of the most common tasks for SQL queries is getting rows from both tables that are matched on certain criteria. This is the syntax for an inner join which means it'll only return rows where there's a match on both tables. There's a lot of new syntax here. Since we're working with two tables, we need to specify from which table the columns are coming from. We that by writing the table then "." then the column name. It's kind of like accessing a JS property. The next part is the FROM and JOIN both of which are followed by the two tables we're trying to join. Since this is an inner join, order does not matter. The next part of the query is ON. Two tables are linked with keys. Every table has a primary key that can act as a foreign key for another table. It's important to note which table each key is coming from. </p>
+
+
+
+	</div>
+	</body>
+</html>

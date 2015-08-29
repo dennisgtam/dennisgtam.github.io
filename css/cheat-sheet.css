@@ -1,0 +1,24 @@
+* {
+  font-family: arial;
+}
+
+h1 {
+  color:;
+  text-align: center;
+}
+
+h2 {
+
+}
+
+.code {
+  background-color: grey;
+  color: white;
+  border-radius: 3px;
+}
+
+#central{
+  width: 80%;
+  display: block;
+  margin: auto;
+}
