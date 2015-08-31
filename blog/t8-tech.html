@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+	<title>Technical Blog 8: Web Frameworks and Ruby on Rails</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/blog-template.css">
+</head>
+
+
+		<body>
+
+      <div id="header-table">
+      	<table>
+      		<tr>
+      			<td><a href="#">Home</a></td>
+      			<td><a href="blog/index.html">Blog</a></td>
+      			<td><a href="https://github.com/dennisgtam">Projects</a></td>
+      			<td><a href="contact.html">Contact</a></td>
+      			<td><a href="about.html">About</a></td>
+      		</tr>
+      	</table>
+      </div>
+
+			<div id="head-body">
+	
+
+					<div id="blog-nav-wrapper">
+          <div class="blog-nav-head"><a href="index.html">Technical</a></div>
+          <div class="blog-nav-head"><a href="index.html">Cultural</a></div>
+          <div class="blog-nav-head"><a href="index.html">Misc</a></div>
+          <div class="blog-nav-head"><a href="index.html">All</a></div>
+				</div>
+			</div>
+
+			<div id="blog">
+
+				<h1>Technical Blog 8: Web Frameworks and Ruby on Rails</h1>
+				<h4>August 30, 2015</h4>
+
+				<p>While we've covered HTML, CSS, and now JS, we haven't really gotten into building any web applications yet. In fact, we haven't built any web application at all yet. All our Ruby has been localized to our personal machines and is not connnected to the web in any way. There's a lot that goes behind the scenes in web applications and it'd be a huge pain if we had to take care of them everytime we want to create one. A web framework helps us bridge the gap between the Ruby we've been using and the Ruby we'll be using on the web. But first, we have to understand how the web works what a web framework does.</p>
+
+
+				<p>This is a gross oversimplifcation but the internet is a bunch of computers that are connected and know how to talk each other. Files on these computers are most often collected onto web servers. A web server both the physical device and the application that holds all these files. A browser is the principal way that a computer talks to a web server. The browser communicates with the server via something called the HTTP protocol. In response to the HTTP request, the server will a deliver HTML file to the computer that called it and the browser will  render the HTML.</p>
+
+				<p>There are two types of HTTP methods, the GET and POST methods. The GET method is pretty simple, it simply retrieves data from the web application's web server. It does not modify any files on the web server. The POST method is more complicated but it involves changing data on the web application's web server. Unlike a GET method, a POST method delivers data to the web application  and makes a change instead of simply retrieving a file.</p>
+
+				<p>Specifying GET and POST for every single method and handling every exception when trying to write a web application would be extremely frustrating. A web framework helps us write code without worrying as much about HTTP and all the caveats.</p>
+
+				<p>Ruby on Rails is a Ruby gem designed as a web framework for Ruby! It uses the Model-view-controller model. It's kind of similar to HTML, CSS, and JS in concept. HTML, CSS, and JS together describes what a web page contains, how it looks, and how it interacts with the user (front end wise). The controller interprets requests from the browser and sends them to either the model or view. The view sends back what the user will see on their browser: HTML etc. The model contains Ruby classes and objects and this is where the bulk of traditional ruby code resides.</p>
+
+				<p>There's a lot more to talk about but we're all time boxed out for this week! I feel this is something that will become a lot more clear when I'm actually writing web applications.</p>
+			
+			</div>
+		</body>
+	</div>
+
+
+</body>
+</html>
