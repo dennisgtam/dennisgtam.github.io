@@ -2,11 +2,18 @@
 	font-family: Arial;
 }
 
+body{
+		background-color: #CCD6E0;
+
+}
+
 #header-table{
 	position: fixed;
 	display: block;
-	right: 10%;
-	font-size: 28px
+	right: 15%;
+	font-size: 28px;
+	background-color: #A31919;
+	border-radius: 15px;
 }
 
 #header-table a{
@@ -14,9 +21,11 @@
 	margin-left:  5px;
 	margin-right: 5px;
 	text-decoration: none;
+	color: white;
 }
 
 #center-column{
+	background-color: #CCD6E0;
 	margin: auto;
 	width: 70%;
 	position: relative;
@@ -25,12 +34,12 @@
 
 .media-box{
 	display: inline-block;
-	border: 3px solid white;
+	border: 3px solid #CCD6E0;
 	width: 49%;
 	height: 250px;
 	text-align: center;
 	line-height: 250px;
-	background-color: #FF9900;
+	background-color: #A31919;
 	color: white;
 	font-size: 32px;
 	vertical-align: top;
@@ -43,12 +52,12 @@
 
 .central-box{
 	display: inline-block;
-	border: 3px solid white;
+	border: 3px solid #CCD6E0;
 	width: 99%;
 	height: 200px;
 	text-align: center;
 	line-height: 200px;
-	background-color: #FF9900;
+	background-color: #A31919;
 	font-size: 40px;
 	color: white;
 	line-height: 50px
@@ -58,5 +67,9 @@
 	text-decoration: none;
 	font-size: 40px;
 	color: white;
+}
+
+#flag-box{
+	background-color: white;
 }
 

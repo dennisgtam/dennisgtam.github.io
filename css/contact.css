@@ -2,6 +2,11 @@
 	font-family: Arial;
 }
 
+body{
+		background-color: #CCD6E0;
+
+}
+
 #header-table{
 	position: fixed;
 	right: 16%;
@@ -29,7 +34,7 @@
 
 .media-box{
 	display: inline-block;
-	border: 3px solid white;
+	border: 3px solid #CCD6E0;
 	width: 49%;
 	height: 250px;
 	text-align: center;

@@ -52,6 +52,7 @@ var Display = {
 		for (var counter =  0; counter < pattern.length;  counter++){
 			$("#"+pattern[counter]).fadeOut('slow').fadeIn('slow');
 			//Could not figure out why this is only executed after the  game is over.
+			//Not pushing to DOM until after exectuion of JS for some reason
 		}
 	},
 	get_attempt : function(){

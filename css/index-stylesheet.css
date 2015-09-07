@@ -1,23 +1,25 @@
 *{
 	font-family: Helvetica;
-
 }
 
 .main-body{
 	margin: auto;
 	width: 80%;
 	position: relative;
-	top: 20px;
+	background-color: #939AA2;
+	border: 1px solid black;
+	height: 480px;
+}
+
+body{
 	background-color: #CCD6E0;
+	height: 100%;
 }
 
 .upper-body{
 	margin: auto;
 	width: 80%;
 	position: relative;
-	top: 100px;
-	background-color: white;
-	border-radius: 25px
 }
 
 #header1{
@@ -26,36 +28,40 @@
 	background-color: #A31919;
 	font-family: Helvetica;
 	padding-top: 20px;
-	padding-bottom: 20px
+	padding-bottom: 20px;
+	border-collapse: collapse;
+
 }
 
 #header-table{
-	position: fixed;
 	right: 10%;
-	display: block;
 	border-radius: 12px;
-	color:  white;
-	background-color: #A31919;
+	display: inline-block;
+	float: right;
+	border-collapse: collapse;
 }
 
+table{
+	border-collapse: collapse;
+}
+
+
 #header-table a{
+	background-color: #A31919;
 	color: white;
 	font-size: 32px;
 	margin-left:  5px;
 	margin-right: 5px;
 	text-decoration: none;
-
 }
 
 td a{
+	background-color: #A31919;
 	display: inline-block;
 	margin: 5px 10px 5px 10px;
 }
 
-#head-wrapper{
-	border-radius: 25px
-	width: 80%;
-}
+
 
 h1{
 	color: white;
@@ -67,8 +73,6 @@ h1{
 }
 
 #head-image{
-	margin-top: 0px;
-	margin-bottom:  30px;
 	width: 100%;
 }
 
@@ -78,12 +82,12 @@ h1{
 
 .chunk{
 	display: inline-block;
-	margin: 25px 100px 25px 100px;
-	width: 25%;
-	height: 350px;
+	margin: 70px 60px 25px 60px;
+	width: 40%;
+	height: 300px;
 	vertical-align: top;
 	overflow: hidden;
-	background-color: #939AA2;
+	background-color: #CCD6E0;
 	border-radius: 12px;
 }
 
@@ -127,8 +131,10 @@ h1{
 }
 
 #footer-table{
-	display: block;
-	border-radius: 12px;
+	width: 79.4%;
+	position: fixed;
+	bottom: 0px;
+	display: inline-block;
 	color:  white;
 	background-color: #A31919;
 	text-decoration: none;
@@ -140,5 +146,4 @@ h1{
 	margin-left:  5px;
 	margin-right: 5px;
 	text-decoration: none;
-
 }
